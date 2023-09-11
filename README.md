@@ -43,7 +43,7 @@ npm i  nodemon --dev
     "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]    
 }
 ```
-- Acesse o (Vercel)[https://vercel.com/signup] e faça o login com a sua conta do Github
+- Acesse o (Vercel)[https://vercel.com/login] e faça o login com a sua conta do Github
 - Importe o projeto desejado que será exibido na lista do Github
 - Na área de Environment Variables, recorte e cole o seu arquivo .env
 - Clique em Deploy e apaixone-se ♥️😃 pelo Vercel 
