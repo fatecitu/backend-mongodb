@@ -1,0 +1,25 @@
+use('FatecItu')
+db.prestadores.insertOne({
+    "cnpj": "45150718000142",
+    "razao_social": "JOSUÉ ALVES ME",
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "JOSUÉ BOY",
+    "data_inicio_atividade": "2020-08-01",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2963]
+    }
+})
+
+use('FatecItu')
+db.prestadores.insertOne({
+    "cnpj": "45150718000143",
+    "razao_social": "MARIA ALVES ME",
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "MARIA BOY",
+    "data_inicio_atividade": "2020-08-01",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2963]
+    }
+})
