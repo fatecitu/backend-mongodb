@@ -14,10 +14,11 @@
 
 ## 📦Packages Utilizados
 ```
-npm i  express
-npm i  mongodb
-npm i  dotenv
-npm i  nodemon --dev
+npm i express
+npm i mongodb@4.2
+npm i dotenv
+npm i nodemon --dev
+npm i express-validator
 ```
 
 ## 📝Função de cada um dos pacotes
