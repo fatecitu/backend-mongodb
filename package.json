@@ -9,6 +9,7 @@
     "npm": "9.x"
   },
   "scripts": {
+    "start": "node ./api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon api/index.js"
   },
@@ -25,5 +26,9 @@
     "express-validator": "^7.0.1",
     "mongodb": "^4.1.0",
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "9.x"
   }
 }

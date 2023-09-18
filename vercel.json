@@ -1,7 +1,11 @@
 {
     "version": 2,
+<<<<<<< HEAD
     "rewrites": [{
         "source": "/api/(.*)",
         "destination": "/api"
     }]
+=======
+    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]    
+>>>>>>> 6f13e10002481eb0c2d6600c62b322278938699a
 }
