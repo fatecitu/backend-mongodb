@@ -7,6 +7,8 @@ const router = express.Router()
 const {db, ObjectId} = await connectToDatabase()
 const nomeCollection = 'prestadores'
 
+import auth from '../middleware/auth.js'
+
 const validaPrestador = [
     check('cnpj')
     .not().isEmpty().trim().withMessage('É obrigatório informar o CNPJ')
@@ -27,7 +29,7 @@ const validaPrestador = [
  * GET /api/prestadores
  * Lista todos os prestadores de serviço
  */
-router.get('/', async(req, res) => {
+router.get('/', auth, async(req, res) => {
     try{
         db.collection(nomeCollection).find().sort({razao_social: 1}).toArray((err, docs) => {
             if(!err){
@@ -49,7 +51,7 @@ router.get('/', async(req, res) => {
  * GET /api/prestadores/id/:id
  * Lista todos os prestadores de serviço
  */
-router.get('/id/:id', async(req, res)=> {
+router.get('/id/:id', auth, async(req, res)=> {
     try{
         db.collection(nomeCollection).find({'_id': {$eq: ObjectId(req.params.id)}})
         .toArray((err, docs) => {
@@ -68,7 +70,7 @@ router.get('/id/:id', async(req, res)=> {
  * GET /api/prestadores/razao/:razao
  * Lista os prestadores de serviço pela razao social
  */
-router.get('/razao/:razao', async(req, res)=> {
+router.get('/razao/:razao', auth, async(req, res)=> {
     try{
         db.collection(nomeCollection)
         .find({'razao_social': {$regex: req.params.razao, $options: "i"}})
@@ -90,7 +92,7 @@ router.get('/razao/:razao', async(req, res)=> {
  * Apaga o prestador de serviço pelo id
  */
 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', auth, async(req, res) => {
     await db.collection(nomeCollection)
     .deleteOne({"_id": { $eq: ObjectId(req.params.id)}})
     .then(result => res.status(200).send(result))
@@ -100,7 +102,7 @@ router.delete('/:id', async(req, res) => {
  * POST /api/prestadores
  * Insere um novo prestador de serviço
  */
-router.post('/', validaPrestador, async(req, res) => {
+router.post('/', auth, validaPrestador, async(req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()){
         return res.status(400).json(({
@@ -118,7 +120,7 @@ router.post('/', validaPrestador, async(req, res) => {
  * PUT /api/prestadores
  * Altera um prestador de serviço
  */
-router.put('/', validaPrestador, async(req, res) => {
+router.put('/', auth, validaPrestador, async(req, res) => {
     let idDocumento = req.body._id //armazenando o id do documento
     delete req.body._id //iremos remover o id do body
     const errors = validationResult(req)
