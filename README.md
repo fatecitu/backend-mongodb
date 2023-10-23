@@ -21,6 +21,7 @@ npm i nodemon --dev
 npm i express-validator
 npm i bcryptjs
 npm i jsonwebtoken
+npm i cors
 ```
 
 ## 📝Função de cada um dos pacotes
@@ -32,6 +33,10 @@ npm i jsonwebtoken
 <tr>
 <td><code>bcryptjs</code></td>
 <td>Bcrypt é um algoritmo de geração de hashs para senhas </td>
+</tr>
+<tr>
+<td><code>cors</code></td>
+<td>Habilita o CORS Cross-Origin resource sharing</td>
 </tr>
 </tbody></table>
 
