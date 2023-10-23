@@ -1,12 +1,13 @@
 import express from 'express'
 
+import cors from 'cors'
 const app = express()
 const port = 4000 
 //import das rotas da app
 import rotasPrestadores from './routes/prestador.js'
 import rotasUsuarios from './routes/usuario.js'
 
-//app.use(express.urlencoded({ extended: true}))
+app.use(cors()) //Habilita o CORS Cross-Origin resource sharing
 app.use(express.json()) // irá fazer o parse de arquivos JSON
 //Rotas de conteúdo público
 app.use('/', express.static('public'))
