@@ -47,6 +47,7 @@ const validaUsuario = [
         .default('Cliente')
         .isIn(['Admin', 'Cliente']).withMessage('O tipo do usuário deve ser Admin ou Cliente'),
     check('avatar')
+        .optional({ nullable: true }), 
         .isURL().withMessage('O endereço do Avatar deve ser uma URL válida')
 ]
 //Post de usuário
