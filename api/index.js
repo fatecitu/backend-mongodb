@@ -7,7 +7,10 @@ const port = 4000
 import rotasPrestadores from './routes/prestador.js'
 import rotasUsuarios from './routes/usuario.js'
 
-app.use(cors()) //Habilita o CORS Cross-Origin resource sharing
+//Habilita o CORS Cross-Origin resource sharing
+app.use(cors({
+    origin: ['http://127.0.0.1:5500'] //informe outras URL´s se necessário
+  }));
 app.use(express.json()) // irá fazer o parse de arquivos JSON
 //Rotas de conteúdo público
 app.use('/', express.static('public'))
