@@ -1,4 +1,5 @@
-const urlBase = 'https://backend-mongodb-pi.vercel.app/api'
+//const urlBase = 'https://backend-mongodb-pi.vercel.app/api'
+const urlBase = 'http://localhost:4000/api'
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
     
@@ -28,8 +29,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         // Verificar se o token foi retornado        
         if (data.access_token) {
             // Armazenar o token no localStorage
-            localStorage.setItem("token", data.token);
-            alert("Login bem-sucedido! Token armazenado no localStorage.");
+            localStorage.setItem("token", data.access_token);
+            window.location.href = "menu.html";
         } else if (data.errors) {
             // Caso haja erros na resposta da API
             const errorMessages = data.errors.map(error => error.msg).join("\n");
