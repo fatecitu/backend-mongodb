@@ -32,11 +32,11 @@ access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzN
 // POST - Insere um novo registro
 POST {{baseURL}}
 Content-Type: application/json
-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjdhNDAzNjJlNDg4M2NjOGUyOWMwIn0sImlhdCI6MTY5ODA2OTA1OSwiZXhwIjoxNjk4MzI4MjU5fQ.cLtXR2sCCdocxUISVG7WyX7_Sh8uYCZjKghlVg3YMi8
+
 
 
 {
-    "cnpj": "45150718000149",
+    "cnpj": "45150718000148",
     "razao_social": "SERVIÇOS MOTOBOY LTDA.",
     "cnae_fiscal": 451510,
     "nome_fantasia": "MOTOBOY",
